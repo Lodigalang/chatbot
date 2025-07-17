@@ -17,14 +17,6 @@
         "documentation": {}
     },
     {
-        "label": "genai",
-        "importPath": "google",
-        "description": "google",
-        "isExtraImport": true,
-        "detail": "google",
-        "documentation": {}
-    },
-    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -42,6 +34,15 @@
         "documentation": {}
     },
     {
+        "label": "google.generativeai",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "google.generativeai",
+        "description": "google.generativeai",
+        "detail": "google.generativeai",
+        "documentation": {}
+    },
+    {
         "label": "prompt",
         "kind": 5,
         "importPath": "app",
@@ -55,25 +56,25 @@
         "kind": 2,
         "importPath": "Inference",
         "description": "Inference",
-        "peekOfCode": "def chat_bot(prompt) :\n    response = chat.send_message(prompt)\n    return response.text\n#if __name__== \"__main__\":\n    #input_text = input(\"Chat: \")\n    #chat_bot(input_text)\n    #reply=chat_bot(input_text)\n    #print(reply)",
+        "peekOfCode": "def chat_bot(prompt):\n    response = model.generate_content(prompt)\n    return response.text",
         "detail": "Inference",
         "documentation": {}
     },
     {
-        "label": "client",
+        "label": "api_key",
         "kind": 5,
         "importPath": "Inference",
         "description": "Inference",
-        "peekOfCode": "client = genai.Client(api_key=api_key)\nchat = client.chats.create(model=\"gemini-2.0-flash\")\ndef chat_bot(prompt) :\n    response = chat.send_message(prompt)\n    return response.text\n#if __name__== \"__main__\":\n    #input_text = input(\"Chat: \")\n    #chat_bot(input_text)\n    #reply=chat_bot(input_text)\n    #print(reply)",
+        "peekOfCode": "api_key = os.getenv(\"GEMINI_API_KEY\")\n# Konfigurasi API key\ngenai.configure(api_key=api_key)\n# Inisialisasi model (bisa ganti dengan gemini-1.5-pro atau lainnya)\nmodel = genai.GenerativeModel(\"gemini-2.0-flash\")  # atau \"gemini-pro\", \"gemini-1.5-pro\"\n# Fungsi untuk mengirim pesan\ndef chat_bot(prompt):\n    response = model.generate_content(prompt)\n    return response.text",
         "detail": "Inference",
         "documentation": {}
     },
     {
-        "label": "chat",
+        "label": "model",
         "kind": 5,
         "importPath": "Inference",
         "description": "Inference",
-        "peekOfCode": "chat = client.chats.create(model=\"gemini-2.0-flash\")\ndef chat_bot(prompt) :\n    response = chat.send_message(prompt)\n    return response.text\n#if __name__== \"__main__\":\n    #input_text = input(\"Chat: \")\n    #chat_bot(input_text)\n    #reply=chat_bot(input_text)\n    #print(reply)",
+        "peekOfCode": "model = genai.GenerativeModel(\"gemini-2.0-flash\")  # atau \"gemini-pro\", \"gemini-1.5-pro\"\n# Fungsi untuk mengirim pesan\ndef chat_bot(prompt):\n    response = model.generate_content(prompt)\n    return response.text",
         "detail": "Inference",
         "documentation": {}
     }
