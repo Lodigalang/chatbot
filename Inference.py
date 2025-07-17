@@ -1,17 +1,15 @@
+from google import genai
 import os
 from dotenv import load_dotenv
-import google.generativeai as genai
 
 load_dotenv()
-api_key = os.getenv("GEMINI_API_KEY")
+api_key=os.getenv("GEMINI_API_KEY")
 
-# Konfigurasi API key
-genai.configure(api_key=api_key)
+client = genai.Client(api_key=api_key)
+chat = client.chats.create(model="gemini-2.0-flash")
 
-# Inisialisasi model (bisa ganti dengan gemini-1.5-pro atau lainnya)
-model = genai.GenerativeModel("gemini-2.0-flash")  # atau "gemini-pro", "gemini-1.5-pro"
-
-# Fungsi untuk mengirim pesan
-def chat_bot(prompt):
-    response = model.generate_content(prompt)
+def chat_bot(prompt) :
+    response = chat.send_message(prompt)
     return response.text
+
+
