@@ -25,28 +25,12 @@
         "documentation": {}
     },
     {
-        "label": "genai",
-        "importPath": "google",
-        "description": "google",
-        "isExtraImport": true,
-        "detail": "google",
-        "documentation": {}
-    },
-    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "os",
         "description": "os",
         "detail": "os",
-        "documentation": {}
-    },
-    {
-        "label": "load_dotenv",
-        "importPath": "dotenv",
-        "description": "dotenv",
-        "isExtraImport": true,
-        "detail": "dotenv",
         "documentation": {}
     },
     {
@@ -91,33 +75,6 @@
         "description": "Inference",
         "peekOfCode": "chat = client.chats.create(model=\"gemini-2.0-flash\")\ndef chat_bot(prompt) :\n    response = chat.send_message(prompt)\n    return response.text\n#if __name__== \"__main__\":\n    #input_text = input(\"Chat: \")\n    #chat_bot(input_text)\n    #reply=chat_bot(input_text)\n    #print(reply)",
         "detail": "Inference",
-        "documentation": {}
-    },
-    {
-        "label": "chat_bot",
-        "kind": 2,
-        "importPath": "tempCodeRunnerFile",
-        "description": "tempCodeRunnerFile",
-        "peekOfCode": "def chat_bot(prompt) :\n    response = chat.send_message(prompt)\n    return response.text\nif __name__==\"__main__\":",
-        "detail": "tempCodeRunnerFile",
-        "documentation": {}
-    },
-    {
-        "label": "client",
-        "kind": 5,
-        "importPath": "tempCodeRunnerFile",
-        "description": "tempCodeRunnerFile",
-        "peekOfCode": "client = genai.Client(api_key=api_key)\nchat = client.chats.create(model=\"gemini-2.0-flash\")\ndef chat_bot(prompt) :\n    response = chat.send_message(prompt)\n    return response.text\nif __name__==\"__main__\":",
-        "detail": "tempCodeRunnerFile",
-        "documentation": {}
-    },
-    {
-        "label": "chat",
-        "kind": 5,
-        "importPath": "tempCodeRunnerFile",
-        "description": "tempCodeRunnerFile",
-        "peekOfCode": "chat = client.chats.create(model=\"gemini-2.0-flash\")\ndef chat_bot(prompt) :\n    response = chat.send_message(prompt)\n    return response.text\nif __name__==\"__main__\":",
-        "detail": "tempCodeRunnerFile",
         "documentation": {}
     }
 ]
